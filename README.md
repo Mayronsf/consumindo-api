@@ -1,30 +1,93 @@
-🚀 Sistema Java Integrado com a API da NASA 🌌
-Bem-vindo ao meu projeto mais recente! Este sistema Java inovador integra-se à API da NASA, proporcionando uma experiência interativa para explorar o fascinante mundo das viagens espaciais.
+# Explorador de Dados da NASA
 
-🌟 Principais Funcionalidades
-Integração com a API da NASA
-O sistema consome dados da API da NASA, trazendo informações atualizadas sobre missões espaciais, imagens deslumbrantes e muito mais.
+Este projeto é uma aplicação Java desenvolvida em parceria com João Ryan, que integra-se à API da NASA para fornecer informações atualizadas sobre missões espaciais, imagens e outros dados astronômicos.
 
-Documentação com Swagger
-Para facilitar a interação com a API, implementei o Swagger. Esta ferramenta fornece uma interface intuitiva para visualizar e testar os endpoints disponíveis.
+## 🚀 Funcionalidades
 
-Front-end Interativo
-O sistema possui um front-end dinâmico que exibe um histórico de viagens espaciais. Os usuários podem explorar detalhes de cada missão e visualizar imagens relacionadas, tornando a experiência ainda mais rica e envolvente.
+- **Integração com a API da NASA**: Consumo de dados em tempo real sobre missões espaciais e imagens astronômicas.
+- **Documentação com Swagger**: Interface interativa para visualização e teste dos endpoints da API.
+- **Interface Gráfica**: Visualização dinâmica do histórico de missões espaciais com detalhes e imagens.
 
-🛠️ Desafio Enfrentado: Bug na Porta 8080
-Durante o desenvolvimento, enfrentei um desafio ao tentar iniciar a aplicação. A porta 8080, padrão para aplicações Spring Boot, estava em uso por outro processo, impedindo a inicialização da minha aplicação.
+## 🛠 Tecnologias Utilizadas
 
-🔧 Solução Implementada
-Identificação do Processo
-Usei o comando netstat -ano | findstr :8080 no terminal para identificar o processo que estava utilizando a porta 8080. Isso me forneceu o ID do processo (PID) em conflito.
+- **Java 17+**
+- **Spring Boot**
+- **Swagger**
+- **Maven**
 
-Finalização do Processo
-Com o PID em mãos, finalizei o processo com o comando taskkill /PID <PID> /F, liberando a porta para que minha aplicação pudesse ser iniciada.
+## 📌 Pré-requisitos
 
-Reinício da Aplicação
-Após liberar a porta, reiniciei a aplicação com o comando ./mvnw spring-boot:run, e, felizmente, tudo funcionou perfeitamente!
+Antes de executar o projeto, certifique-se de ter instalado:
 
-🚀 Conclusão
-Esse projeto não só aprimorou minhas habilidades em Java e Spring Boot, mas também me ensinou a importância da gestão de processos e da resolução de problemas em tempo real. Estou ansioso para continuar explorando novas tecnologias e desafios no desenvolvimento de software!
+- **Java 17 ou superior**
+- **Maven**
 
-Se você estiver interessado em saber mais sobre o projeto ou discutir sobre desenvolvimento de software, sinta-se à vontade para entrar em contato! 🤝
+## 📥 Instalação e Execução
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/Mayronsf/consumindo-api.git
+   ```
+
+2. Acesse o diretório do projeto:
+
+   ```bash
+   cd consumindo-api
+   ```
+
+3. Instale as dependências e compile o projeto:
+
+   ```bash
+   mvn clean install
+   ```
+
+4. Execute a aplicação:
+
+   ```bash
+   java -jar target/consumindo-api-0.0.1-SNAPSHOT.jar
+   ```
+
+5. Acesse a documentação Swagger em:  
+   [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+
+## ⚠ Problemas Conhecidos
+
+Durante o desenvolvimento, identificamos que a porta `8080` pode estar em uso por outro processo, impedindo a inicialização da aplicação. Para resolver isso, você pode:
+
+- Identificar e finalizar o processo que está utilizando a porta `8080`.
+- Alterar a porta padrão da aplicação modificando o arquivo `application.properties`:
+
+  ```properties
+  server.port=8081
+  ```
+
+## 🤝 Contribuições
+
+Contribuições são bem-vindas! Para colaborar:
+
+1. Faça um fork do repositório.
+2. Crie uma nova branch:  
+   ```bash
+   git checkout -b minha-nova-feature
+   ```
+3. Faça suas alterações e commit:  
+   ```bash
+   git commit -m "Adiciona nova funcionalidade"
+   ```
+4. Envie as alterações:  
+   ```bash
+   git push origin minha-nova-feature
+   ```
+5. Abra um Pull Request 🚀
+
+## 📜 Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
+
+## 👨‍💻 Autores
+
+- **Mayron Silva** - [GitHub](https://github.com/Mayronsf)
+- **João Ryan** - [GitHub](https://github.com/Ryannzadas)
+
+---
